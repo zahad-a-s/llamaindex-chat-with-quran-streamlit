@@ -27,7 +27,7 @@ def load_data():
     Settings.llm = OpenAI(
         model="gpt-3.5-turbo",
         temperature=0.2,
-        system_prompt="""You are an expert in the Quran. Answer all queries in an academic but friendly manner. Always cite references from the Quran with surah English name and number, followed by verse(s), like this: "Reference: [surah_name_en] [surah_no]:[ayah_no_surah]" whenever possible.""",
+        system_prompt="""You are an expert in the Quran. Answer all queries in an academic but friendly manner. Always cite references from the Quran (with surah Enlglish name and number, followed by verse(s), like this: Reference: [surah_no,]) whenever possible.""",
     )
     index = VectorStoreIndex.from_documents(docs)
     return index
